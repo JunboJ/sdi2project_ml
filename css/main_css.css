@@ -1,0 +1,196 @@
+
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+          width:75%;
+          margin: auto;
+        }
+
+        .myCarousel{
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .img-responsive{display:block;height:150;max-width:100%}
+        
+        /*body{
+            background-color: aliceblue;
+            background-size:cover;
+            height: auto;
+        }*/
+        .navbar {
+            background-color: lightgray;
+            
+        }
+
+        .section3{
+            text-align: right;
+        }
+        #searchbox {
+            float: right;
+            margin: 10px auto 10px;
+            
+            padding-right: 10px;
+        }
+          
+          .mynavBar input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+          }
+          
+          .mynavBar .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+          }
+          
+          .mynavBar.search-container button:hover {
+            background: #ccc;
+          }
+
+          .register {
+              margin : 70px auto 50px;
+              padding: 50px 50px;
+              background-image: url(img/backregister.JPG);
+              background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:cover;
+            height: auto;
+            width: auto;
+          }
+
+    @media (max-width:1000px){
+        #logo {
+            text-align: left;
+        }
+        #logo_pic{
+            height: 40px;
+            }     
+    }
+
+    @media (min-width:1000px){
+        #logo{
+            text-align: left;
+        }
+        #logo_pic{
+            height: 20px;
+           
+        }
+    }
+
+        .mynavBar .search-container {
+            float: none;
+          }
+          .mynavBar input[type=text], .mynavBar .search-container button {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin-right: 14px;
+          }
+          .mynavBar input[type=text] {
+            border: 1px solid #ccc;  
+          }
+
+        section{
+            background-color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer{
+            background-color:darkslategray;
+            height: 100px;
+            margin: 0px -8px 0px;
+            border-radius: 5px 5px 0px 0px;
+            box-shadow: 0px -1px 4px 1px black;
+        }
+        
+        footer article{
+            margin: 20px 0px 0px 20px;
+            padding: 20px 0px 0px 20px;
+            font-family: 'Libre Baskerville', serif;
+            font-size : 10px;
+            text-align: center;
+            color: white;
+        }
+        
+        .text-1{
+            font-family: 'Libre Baskerville', serif;
+            font-size : 15px;
+            text-align: center;
+        }
+        .text-1 h1{
+            font-weight: bolder;
+            color : brown;
+        }
+
+        .text-1 article {
+            padding: 10px;
+        }
+
+        #merchan{
+            background-color: white;
+            color : darkblue;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+            font-family: 'Libre Baskerville', serif;
+            padding:30px;
+        }
+      
+        .text-2{
+            background-color: white;
+            text-size-adjust: 20px;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .text-2 h1{
+            font-weight: bold;
+            color: brown;
+            max-width: 100%;
+        }
+        #button {
+            text-align: right;
+            padding: 5px 5px;
+}
+
+/*form validation*/
+.valid_input {
+    margin: 5px 3px;
+}
+.form_title {
+    text-align: right;
+}
+#law_file {
+    color: royalblue;
+    text-decoration: none;
+}
+#radio_buttons {
+    margin-bottom: 20px;
+}
+#card_radioButton {
+    height: 40px;
+}
+#card_radioButton img input {
+    line-height: 40px;
+}
+#check_box {
+    text-align: right;
+    padding: 30px;
+    background-color: aquamarine;
+}
+#confirm_message {
+    display: none;
+}
+.empty {
+    background-color:lightcoral;
+}
+.form_align {
+    text-align: center;
+}
