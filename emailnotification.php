@@ -34,7 +34,7 @@
  $contentType = "text/html; charset=utf-8";
   
  //换行符号 Linux: \n  Windows: \r\n
- $crlf = "\r\n";
+ $crlf = "\n";
  $mime = new Mail_mime($crlf);
  $mime->setHTMLBody($content);
   
@@ -50,7 +50,7 @@
  $headers["Content-Type"] = $contentType;
  $headers = $mime->headers($headers);
   
- $smtp =& Mail::factory("smtp", $smtpinfo);
+ $smtp = Mail::factory("smtp", $smtpinfo);
   
   
  $mail = $smtp->send($mailAddr, $headers, $body);
