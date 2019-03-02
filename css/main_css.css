@@ -189,8 +189,15 @@
     display: none;
 }
 .empty {
-    background-color:lightcoral;
+    background-color: lightcoral;
 }
 .form_align {
     text-align: center;
+}
+
+/* movie detail page------------------------------------------------------------------------------------------------------------------- */
+#trailer {
+    width: 90%;
+    left: auto;
+    right: auto;
 }

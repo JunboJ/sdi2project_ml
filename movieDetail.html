@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- nav bar -->
+    <div data-target=".navbar" data-offset="50">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>  
+                        <span class="icon-bar"></span>  
+                        <span class="icon-bar"></span>  
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#"><img id="logo_pic" src="img/logomovielover.png"></a>
+                </div>
+                <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#section1">Home</a></li>
+                            <li><a href="moviedetails.html">Movies</a></li>
+                            <li><a href="#section3">News</a></li>
+                            <li><a href="#section4">Contact Us</a></li>
+                            <li><a href="registerpage.html" target="_blank">Login/Register</a></li>
+                        </ul>
+                        <div class="search-container">
+                            <form action="/action_page.php" id="searchbox">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><img src="img/magnify.png" width=20px></i></button>
+                            </form>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+    <!-- trailer here -->
+        <div class="col-xm-0 col-sm-1 col-md-2 col-lg-2"></div>
+        <div class="col-xm-12 col-sm-10 col-md-8 col-lg-8">
+            <h1>Movie Title</h1>
+            <video id="trailer" controls autoplay>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-xm-0 col-sm-1 col-md-2 col-lg-2"></div>
+    </div>
+    
+</body>
+</html>
