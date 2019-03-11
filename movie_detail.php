@@ -44,11 +44,21 @@
                     </nav>
                 </div>
         </div>
+    
+    <?php
+        $movieID = 1;
+        include 'connection.php';
+        
+        $sql = "SELECT title, poster FROM movies WHERE movieID = $movieID";
+        $result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_array($result);
+    ?>
+
     <div class="row">
         <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
         <div class="col-xm-8 col-sm-8 col-md-8 col-lg-8">
             <div id="movietitle" class="row">
-                <h1>Movie Title</h1>
+            <?php echo "<h1>".$row[0]."</h1>" ?>
             </div>
             <div id="trailer" class="row">
             <!-- <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="0"></video> -->
@@ -58,7 +68,7 @@
             </div>
             <div id="poster_synopsis" class="row">
                 <div class="col-xm-3 col-sm-3 col-md-3 col-lg-3">
-                    <img src="" id="poster">
+                    <?php "<img src=".$row[1]." id="poster">" ?>
                     <p>Release Date</p>
                     <button name="addToMylist" value="Add to Mylist" class="btn btn-default">Add to Mylist</button>
                 </div>

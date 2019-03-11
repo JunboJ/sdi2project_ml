@@ -10,7 +10,7 @@
     <?php
         include 'connection.php';
 
-        $sql .= "UPDATE movielover.movies
+        $sql = "UPDATE movies
                 SET poster =  '..\img\thelionking_poster.jpg'
                 WHERE movieID = 4";
 
