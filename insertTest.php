@@ -8,21 +8,11 @@
 </head>
 <body>
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
+        include 'connection.php';
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } 
-        echo "Connected successfully";
-
-        $sql = "INSERT INTO movies (poster)
-                VALUES ('..\img\it2_poster.jpg')";
+        $sql .= "UPDATE movielover.movies
+                SET poster =  '..\img\thelionking_poster.jpg'
+                WHERE movieID = 4";
 
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
