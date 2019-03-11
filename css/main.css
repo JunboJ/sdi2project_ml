@@ -1,0 +1,73 @@
+        body {
+            min-height: 100%;
+        }
+        
+        footer {
+            background: gray;
+        }
+
+/* nav bar here */
+        #searchbox {
+            float: right;
+            margin: 10px auto 10px;
+            padding-right: 10px;
+        }
+          
+        .mynavBar input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+          
+        .mynavBar .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .mynavBar.search-container button:hover {
+            background: #ccc;
+        }
+
+        .mynavBar .search-container {
+            float: none;
+        }
+
+        .mynavBar input[type=text], .mynavBar .search-container button {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin-right: 14px;
+        }
+
+        .mynavBar input[type=text] {
+            border: 1px solid #ccc;  
+        }
+
+/* ------------------------------------------ */
+        #movietitle {
+            margin-top: 60px;
+            padding-left: 20px;
+        }
+
+        #video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* div {
+            border: 1px solid black;
+        } */
+
+        .fix_bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
