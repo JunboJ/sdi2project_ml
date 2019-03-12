@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
     <link href="//amp.azure.net/libs/amp/2.2.4/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+
 </head>
 <body id="body">
     <div class="row">
@@ -44,21 +45,43 @@
                     </nav>
                 </div>
         </div>
-    
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////   -->
     <?php
-        $movieID = 1;
+        session_start();
+
+        $_SESSION['movieID'] = 4;
+        $_SESSION['userID'] = 1;
+        $movieID = $_SESSION['movieID'];
+        $userID = $_SESSION['userID'];
+        $myJSON = json_encode($movieID);
         include 'connection.php';
         
-        $sql = "SELECT title, poster FROM movies WHERE movieID = $movieID";
+        $sql = "SELECT title, poster, releasedate, description FROM movies WHERE movieID = $movieID";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
+    
+
+        function addtolist () {
+            $addtowatchlist_sql = "UPDATE watchlist SET movieID = '$movieID' where UserID = $userID";
+            if ($conn->query($addtowatchlist_sql) === TRUE) {
+                echo "add to watch list successfully";
+            } else {
+                echo "Error: " . $addtowatchlist_sql . "<br>" . $conn->error;
+            }
+        }
+    
+    
+    
     ?>
 
+
+    
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////   -->
     <div class="row">
         <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
         <div class="col-xm-8 col-sm-8 col-md-8 col-lg-8">
             <div id="movietitle" class="row">
-            <?php echo "<h1>".$row[0]."</h1>" ?>
+            <h1><?php echo $row[0]?></h1>
             </div>
             <div id="trailer" class="row">
             <!-- <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="0"></video> -->
@@ -67,14 +90,22 @@
                 </video>
             </div>
             <div id="poster_synopsis" class="row">
-                <div class="col-xm-3 col-sm-3 col-md-3 col-lg-3">
-                    <?php "<img src=".$row[1]." id="poster">" ?>
-                    <p>Release Date</p>
-                    <button name="addToMylist" value="Add to Mylist" class="btn btn-default">Add to Mylist</button>
+                <div id="postercol" class="col-xm-3 col-sm-3 col-md-3 col-lg-3">
+
+                    <?php 
+                    $imgpath = 'img/';
+                    echo '<img src='.$imgpath.$row[1].' style = "width:100%; max-width:260px; height:auto"> <br>';
+                    echo "<h3>".$row[2]."</h3>";
+                    ?>
+                <form method="post">
+                    <input type="button" onclick="addtolist($movieID, $userID)" name="addtolist" value="ADD TO LIST" class="btn btn-default">
+                </form>
                 </div>
                 <div class="col-xm-9 col-sm-9 col-md-9 col-lg-9">
                     <h2>Synopsis</h2>
-                    <p>When Hiccup discovers Toothless isn't the only Night Fury, he must seek "The Hidden World", a secret Dragon Utopia before a hired tyrant named Grimmel finds it first.</p>
+                    <?php 
+                        echo "<p>".$row[3]."<p>";
+                    ?>
                 </div>
             </div>
             <hr>
@@ -101,10 +132,11 @@
             </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
     <script src="//amp.azure.net/libs/amp/2.2.4/azuremediaplayer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
 
 </body>
 </html>
