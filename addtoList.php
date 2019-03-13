@@ -1,7 +1,12 @@
 <?php
-    include 'connection.php';
+    // $x = $_REQUEST['mid']
+    $movieid = $_REQUEST['mid'];
+    // $movieid = $_SESSION['movieId'];
 
-    session_start();
-    $movieid = $_SESSION['movieId'];
+    echo $movieid;
+    echo "successed!";
 
-    echo $movieid."erqw";
+
+?>
+
+

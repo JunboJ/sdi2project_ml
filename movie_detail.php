@@ -59,19 +59,7 @@
         $sql = "SELECT title, poster, releasedate, description FROM movies WHERE movieID = $movieID";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
-    
-
-        function addtolist () {
-            $addtowatchlist_sql = "UPDATE watchlist SET movieID = '$movieID' where UserID = $userID";
-            if ($conn->query($addtowatchlist_sql) === TRUE) {
-                echo "add to watch list successfully";
-            } else {
-                echo "Error: " . $addtowatchlist_sql . "<br>" . $conn->error;
-            }
-        }
-    
-    
-    
+        
     ?>
 
 
@@ -79,9 +67,9 @@
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////   -->
     <div class="row">
         <div class="col-xm-2 col-sm-2 col-md-2 col-lg-2"></div>
-        <div class="col-xm-8 col-sm-8 col-md-8 col-lg-8">
+        <div class="col-xm-8 col-sm-8 col-md-8】 col-lg-8">
             <div id="movietitle" class="row">
-            <h1><?php echo $row[0]?></h1>
+            <h1 id="movieTitle"><?php echo $row[0]?></h1>
             </div>
             <div id="trailer" class="row">
             <!-- <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="0"></video> -->
@@ -91,17 +79,15 @@
             </div>
             <div id="poster_synopsis" class="row">
                 <div id="postercol" class="col-xm-3 col-sm-3 col-md-3 col-lg-3">
-
                     <?php 
                     $imgpath = 'img/';
-                    echo '<img src='.$imgpath.$row[1].' style = "width:100%; max-width:260px; height:auto"> <br>';
-                    echo "<h3>".$row[2]."</h3>";
+                        echo '<img src='.$imgpath.$row[1].' style = "width:100%; max-width:260px; height:auto"> <br>';
+                        echo "<h3>".$row[2]."</h3>";
                     ?>
-                <form method="post">
-                    <input type="button" onclick="addtolist($movieID, $userID)" name="addtolist" value="ADD TO LIST" class="btn btn-default">
-                </form>
+                <button class="btn btn-default" onclick="addtoList(<?php echo $movieID?>,<?php echo $userID ?>)"><p id="btn_content">click</p></button>
                 </div>
                 <div class="col-xm-9 col-sm-9 col-md-9 col-lg-9">
+
                     <h2>Synopsis</h2>
                     <?php 
                         echo "<p>".$row[3]."<p>";

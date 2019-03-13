@@ -1,3 +1,15 @@
+function addtoList(mid, uid) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("btn_content").innerHTML = xmlhttp.responseText;
+      }
+  };
+  xmlhttp.open("GET", "addtoList.php?mid="+mid+"&uid="+uid, true);
+  xmlhttp.send();
+
+}
+
 //set footer to bottom
 $(function () {
     function fixedfooter () {
@@ -16,8 +28,8 @@ $(function () {
 
 //azure video
 var myOptions = {
-	"nativeControlsForTouch": false,
-	controls: true,
+    "nativeControlsForTouch": false,
+    controls: true,
     autoplay: true,
     width: "100%",
     height: "auto",
@@ -29,20 +41,4 @@ myPlayer.src([
             "type": "application/vnd.ms-sstr+xml"
         }
 ]);
-
-function showHint(mid, uid) {
-    if (str.length == 0) { 
-      document.getElementById("txtHint").innerHTML = "";
-      return;
-    } else {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("txtHint").innerHTML = this.responseText;
-        }
-      };
-      xmlhttp.open("GET", "gethint.php?mid="+mid+"&uid="+uid, true);
-      xmlhttp.send();
-    }
-  }
 
